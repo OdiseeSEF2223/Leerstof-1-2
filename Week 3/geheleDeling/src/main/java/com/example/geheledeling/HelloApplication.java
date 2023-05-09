@@ -1,4 +1,4 @@
-package com.example.loginscherm;
+package com.example.geheledeling;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,13 +10,9 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        //hiermee bepaal je welk scherm geopend wordt
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        // maak een window -> 320x240 pixels
-        Scene scene = new Scene(fxmlLoader.load(), 400, 320);
-        // titel van het scherm applicatie
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("gehele-deling.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         stage.setTitle("Hello!");
-        // toon het
         stage.setScene(scene);
         stage.show();
     }
