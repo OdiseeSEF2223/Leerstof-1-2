@@ -2,19 +2,20 @@ package com.example.geheledeling;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 
 /**
  * Klasse om een gehele deling te doen
  */
-public class GeheleDeling {
+public class GeheleDelingController {
 
     @FXML
-    private TextField txtX;
+    public TextField txtX;
     @FXML
-    private TextField txtY;
+    public TextField txtY;
     @FXML
-    private TextField txtResult;
+    public TextField txtResult;
+
+    private GeheleDelingViewmodel viewmodel =  new GeheleDelingViewmodel();
 
     /**
      * Voer de deling uit (x en y wordt uit de ui uitgelezen)
@@ -22,7 +23,6 @@ public class GeheleDeling {
     public void bereken(){
         double x = Double.parseDouble(txtX.getText());
         double y = Double.parseDouble(txtY.getText());
-        int result = (int) (x/y);
-        txtResult.setText("" + result);
+        txtResult.setText("" + viewmodel.bereken(x, y));
     }
 }
