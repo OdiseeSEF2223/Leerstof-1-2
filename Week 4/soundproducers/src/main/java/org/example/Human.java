@@ -6,7 +6,7 @@ public class Human extends SoundProducer{
     }
 
     @Override
-    public void makeSound(){
+    public void makeSound() {
         System.out.println("Ik ben " + naam);
     }
 }

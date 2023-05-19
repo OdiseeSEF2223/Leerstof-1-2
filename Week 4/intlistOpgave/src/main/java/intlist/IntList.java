@@ -31,19 +31,13 @@ public class IntList {
      * @return the smallest element, null if the list is empty
      */
     public Integer findMin(){
-        boolean found = false;
         int minimum = Integer.MAX_VALUE; //the largest possible value
         for(final int element: list){
             if(element < minimum){
-                found = true;
                 minimum = element; //make element the smallest Integer found yet
             }
         }
-        if(found) {
-            return minimum;
-        } else {
-            return null;
-        }
+        return minimum;
     }
 
 }

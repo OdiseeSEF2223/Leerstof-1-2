@@ -1,6 +1,6 @@
 package org.example;
 
-public class SoundProducer {
+public abstract class SoundProducer {
 
     protected String naam;
 
@@ -8,7 +8,5 @@ public class SoundProducer {
         this.naam = naam;
     }
 
-    public void makeSound(){
-        System.out.println(naam+ ":\tDit is een generiek geluid");
-    }
+    public abstract void makeSound();
 }

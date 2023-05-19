@@ -5,11 +5,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SortedIntListTest {
+class IntListTest {
 
     final int[] values = {5,4,3,2,1,8,9,};
-    final int[] sortedValues = {1,2,3,4,5,8,9,};  //same list but ordered
-    SortedIntList list;
+    IntList list;
 
     private void addAllValues(){
         for(final int value : values){
@@ -19,10 +18,21 @@ class SortedIntListTest {
 
     @BeforeEach
     public void setup(){
-        list = new SortedIntList();
+        list = new IntList();
     }
 
-    // Tests zelfde als gewone IntList
+    @Test
+    void remove_WithValuesAdded_AllValuesReturnedInOrder() {
+        // Arrange
+        addAllValues();
+        // Act
+        // Assert
+        for(final int value : values) {  // check if each Integer is removed in the same order as it was added
+            assertEquals(value, list.remove(0));
+        }
+        assertNull(list.remove(0)); // Are there no Integers left behind?
+    }
+
     @Test
     void findMin_OnEmptyList_ReturnsNull() {
         // Act
@@ -40,22 +50,4 @@ class SortedIntListTest {
         // Assert
         assertEquals(1, min);
     }
-
-    //Andere functionaliteit
-    //getallen worden gesorteerd bijgehouden
-    @Test
-    void remove_WithValuesAdded_AllSortedValuesReturnedInOrder() {
-        // Arrange
-        addAllValues();
-
-        for(int sv: sortedValues) {
-            // Act
-            int v = list.remove(0);
-            // Assert
-            assertEquals(sv, v);
-        }
-
-        //TODO check if the values are removed in the right order (=sortedValues)
-    }
-
 }
