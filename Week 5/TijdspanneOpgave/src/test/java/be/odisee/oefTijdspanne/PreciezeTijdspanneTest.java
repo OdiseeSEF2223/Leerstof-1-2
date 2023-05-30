@@ -26,6 +26,4 @@ class PreciezeTijdspanneTest {
         assertEquals(5,t1.getMinuten());
         assertEquals(7,t1.getSeconden());
     }
-
-
 }
